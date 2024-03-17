@@ -221,7 +221,7 @@ const FiveDays: React.FC<CurrentWeatherProps> = ({ lat, lon }) => {
               src={weatherIconCondition(firstDayIcon ?? cloudy)}
               alt=""
             />
-            <h6 className=" text-[#a1a1b3] text-[13px] hidden sm:block">
+            <h6 className=" text-[#a1a1b3] text-[11px] hidden sm:block">
               {firstDayDescription}
             </h6>
             <h3>
@@ -238,7 +238,7 @@ const FiveDays: React.FC<CurrentWeatherProps> = ({ lat, lon }) => {
               src={weatherIconCondition(secondDayIcon ?? cloudy)}
               alt=""
             />
-            <h4 className="text-[#a1a1b3] text-[13px] hidden sm:block">
+            <h4 className="text-[#a1a1b3] text-[11px] hidden sm:block">
               {secondDayDescription}
             </h4>
             <h3>
@@ -255,7 +255,7 @@ const FiveDays: React.FC<CurrentWeatherProps> = ({ lat, lon }) => {
               src={weatherIconCondition(thirdDayIcon ?? cloudy)}
               alt=""
             />
-            <h4 className="text-[#a1a1b3] text-[13px] hidden sm:block">
+            <h4 className="text-[#a1a1b3] text-[11px] hidden sm:block">
               {thirdDayDescription}
             </h4>
             <h3>
@@ -272,7 +272,7 @@ const FiveDays: React.FC<CurrentWeatherProps> = ({ lat, lon }) => {
               src={weatherIconCondition(forthDayIcon ?? cloudy)}
               alt=""
             />
-            <h4 className="text-[#a1a1b3] text-[13px] hidden sm:block">
+            <h4 className="text-[#a1a1b3] text-[11px] hidden sm:block">
               {forthDayDescription}
             </h4>
             <h3>
@@ -289,7 +289,7 @@ const FiveDays: React.FC<CurrentWeatherProps> = ({ lat, lon }) => {
               src={weatherIconCondition(fifthDayIcon ?? cloudy)}
               alt=""
             />
-            <h4 className="text-[#a1a1b3] text-[13px] hidden sm:block">
+            <h4 className="text-[#a1a1b3] text-[11px] hidden sm:block">
               {fifthDayDescription}
             </h4>
             <h3>
