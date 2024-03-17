@@ -157,9 +157,50 @@ const CurrentWeather: React.FC<CurrentWeatherProps> = ({ lat, lon }) => {
         return cloudy;
     }
   };
+  //   switch (dayImg) {
+  //     case "01d":
+  //       return bgClearDay;
+  //     case "01n":
+  //       return bgClearNight;
+  //     case "02d":
+  //       return bgFewCloudDay;
+  //     case "02n":
+  //       return bgFewCloudNight;
+  //     case "03d":
+  //       return bgClooudyDay;
+  //     case "03n":
+  //       return bgCloudyNight;
+  //     case "04d":
+  //       return bgFewCloudDay;
+  //     case "04n":
+  //       return bgFewCloudNight;
+  //     case "09d":
+  //       return bgRainDay;
+  //     case "09n":
+  //       return bgRainNight;
+  //     case "10d":
+  //       return bgRainDay;
+  //     case "10n":
+  //       return bgRainNight;
+  //     case "11d":
+  //       return bgStromDay;
+  //     case "11n":
+  //       return bgStromNight;
+  //     case "13d":
+  //       return bgSnowDay;
+  //     case "13n":
+  //       return bgStromNight;
+  //     case "50d":
+  //       return bgStromDay;
+  //     case "50n":
+  //       return bgStromNight;
+  //     default:
+  //       return bgClearDay;
+  //   }
+  // };
 
   const getIcon = currentTempIcon;
- 
+  console.log(getIcon);
   const styles = {
     backgroundImage:
       getIcon === "01d"
