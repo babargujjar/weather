@@ -1,8 +1,4 @@
-import thermometer from "./../../assets/icons/thermometer-simple-light.png";
-import cloudrain from "./../../assets/icons/cloud-rain-light.png";
-import droplight from "./../../assets/icons/drop-light.png";
-import sundim from "./../../assets/icons/sun-dim-light.png";
-import windlight from "./../../assets/icons/wind-light.png";
+import { cloudrain, droplight, sundim, thermometer, windlight } from "../../assets/constants/constants";
 import { useAppSelector } from "../../hooks";
 
 const OtherDetails = () => {
@@ -25,7 +21,7 @@ const OtherDetails = () => {
           <div className="flex lg:max-w-[582px] lg:h-[64px] items-center border-b border-[#282831] py-3 justify-between">
             <div className="flex items-center gap-2">
               <img
-                className="w-[30px] [color:#535364]"
+                className="w-[30px] cursor-pointer [color:#535364]"
                 src={thermometer}
                 alt=""
               />{" "}
@@ -41,7 +37,7 @@ const OtherDetails = () => {
           <div className="flex lg:max-w-[582px] lg:h-[64px] items-center border-b border-[#282831] py-3 justify-between">
             <div className="flex items-center gap-2">
               <img
-                className="w-[30px] [color:#535364]"
+                className="w-[30px] cursor-pointer [color:#535364]"
                 src={cloudrain}
                 alt=""
               />{" "}
@@ -52,7 +48,7 @@ const OtherDetails = () => {
           <div className="flex lg:max-w-[582px] lg:h-[64px] items-center border-b border-[#282831] py-3 justify-between">
             <div className="flex items-center gap-2">
               <img
-                className="w-[30px] [color:#535364]"
+                className="w-[30px]  cursor-pointer [color:#535364]"
                 src={windlight}
                 alt=""
               />{" "}
@@ -63,7 +59,7 @@ const OtherDetails = () => {
           <div className="flex lg:max-w-[582px] lg:h-[64px] items-center border-b border-[#282831] py-3 justify-between">
             <div className="flex items-center gap-2">
               <img
-                className="w-[30px] [color:#535364]"
+                className="w-[30px]  cursor-pointer [color:#535364]"
                 src={droplight}
                 alt=""
               />{" "}
@@ -73,7 +69,11 @@ const OtherDetails = () => {
           </div>
           <div className="flex lg:max-w-[582px] lg:h-[64px] items-center py-3 justify-between">
             <div className="flex items-center gap-2">
-              <img className="w-[30px] [color:#535364]" src={sundim} alt="" />{" "}
+              <img
+                className="w-[30px]  cursor-pointer [color:#535364]"
+                src={sundim}
+                alt=""
+              />{" "}
               <h3 className="text-md text-[#a1a1b3]">UV Index</h3>
             </div>
             <h2 className="text-xl">5</h2>

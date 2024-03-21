@@ -6,7 +6,7 @@ const Home = () => {
     <div className="h-[100vh] w-full">
 
       <div className="max-w-[186px] h-[32px] opacity-[80%] lg:mb-[80px] mx-auto flex justify-center items-center pt-12">
-        <img className="w-[178px] h-[30px]" src={logo} alt="logo" />
+        <img className="w-[178px] h-[30px] cursor-pointer" src={logo} alt="logo" />
       </div>
 
       <div className=" text-white w-[311px] md:w-[504px] mx-auto flex flex-col mt-[192px] justify-center items-center">

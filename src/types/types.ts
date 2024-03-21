@@ -306,4 +306,160 @@ export type Coords = {
     cod: number;
   }
 
+  export type LocalNamesss = {
+  de?: string;
+  ar?: string;
+  lt?: string;
+  fr?: string;
+  et?: string;
+  ur?: string;
+  ml?: string;
+  cs?: string;
+  zh?: string;
+  ja?: string;
+  hi?: string;
+  nl?: string;
+  en?: string;
+  it?: string;
+  ru?: string;
+  uk?: string;
+  oc?: string;
+  es?: string;
+}
+
+export type Location = {
+  name: string;
+  local_names: LocalNames;
+  lat: number;
+  lon: number;
+  country: string;
+  state: string;
+}
+
+export type Citys = {
+  name: string;
+  local_names: LocalNames;
+  lat: number;
+  lon: number;
+  country: string;
+  state: string;
+}
+
+export type Chak = {
+  name: string;
+  local_names: LocalNames;
+  lat: number;
+  lon: number;
+  country: string;
+  state: string;
+}
+export type data = {
+  name: string;
+  local_names: LocalNames;
+  lat: number;
+  lon: number;
+  country: string;
+  state: string;
+}
+
+export type LocationType =data | LocalNamesss | Location | Citys | Chak;
+
+
+
+export type MainWeather = {
+    temp: number;
+    feels_like: number;
+    temp_min: number;
+    temp_max: number;
+    pressure: number;
+    sea_level: number;
+    grnd_level: number;
+    humidity: number;
+    temp_kf: number;
+}
+
+export type WeatherDetails = {
+    id: number;
+    main: string;
+    description: string;
+    icon: string;
+}
+
+export type Cloudsss = {
+    all: number;
+}
+
+export type Windss = {
+    speed: number;
+    deg: number;
+    gust: number;
+}
+
+export type Syssss = {
+    pod: string;
+}
+
+export type WeatherForecast = {
+    dt: number;
+    main: MainWeather;
+    weather: WeatherDetails[];
+    clouds: Cloudsss;
+    wind: Windss;
+    visibility: number;
+    pop: number;
+    sys: Syssss;
+    dt_txt: string;
+}
+
+export type Cityss = {
+    id: number;
+    name: string;
+    coord: {
+        lat: number;
+        lon: number;
+    };
+    country: string;
+    population: number;
+    timezone: number;
+    sunrise: number;
+    sunset: number;
+}
+
+export type WeatherApiResponse = {
+    data: {
+        cod: string;
+        message: number;
+        cnt: number;
+        list: WeatherForecast[];
+        city: Cityss;
+    };
+    status: number;
+    statusText: string;
+    headers: {
+        "content-length": string;
+        "content-type": string;
+    };
+    config: {
+        transitional: {
+            silentJSONParsing: boolean;
+            forcedJSONParsing: boolean;
+            clarifyTimeoutError: boolean;
+        };
+        adapter: string[];
+        transformRequest: null[];
+        transformResponse: null[];
+        timeout: number;
+        xsrfCookieName: string;
+        xsrfHeaderName: string;
+        maxContentLength: number;
+        maxBodyLength: number;
+        env: {};
+        headers: {
+            Accept: string;
+        };
+        method: string;
+        url: string;
+    };
+    request: {};
+}
 

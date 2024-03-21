@@ -1,58 +1,10 @@
-import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../hooks";
-import { getOptions } from "../../store/OptionSlice";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { LocationItem } from "../../types/types";
 import loader from "./../../assets/icons/Type7.png";
+import useSearch from "./useSearch";
 
 
 const Search = () => {
-
-  const [search, setSearch] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [relatedData, setRelatedData] = useState<any>([]);
-
-  const handler = (value: string) => {
-    setSearch(value);
-  };
-
-  const navigate = useNavigate();
-  const dispatch = useAppDispatch();
-  const relatedCityName = useAppSelector((state) => state.options);
-
-
-  const data: LocationItem[] = relatedData.data;
-
-  useEffect(() => {
-    if (relatedCityName?.data) {
-      setRelatedData(relatedCityName.data);
-    } else {
-      setRelatedData([]);
-    }
-  }, [relatedCityName]);
-
-  const handleNavigate = (item: LocationItem) => {
-    let lon = item.lon;
-    let lat = item.lat;
-
-    setTimeout(() => {
-      navigate(`/weather?lon=${lon}&lat=${lat}`);
-    }, 2000);
-
-  };
-
-  const cityName = (item: LocationItem) => {
-    setSearch(item.name);
-    setIsLoading(true);
-    handleNavigate(item);
-  };
-
-  useEffect(() => {
-    setTimeout(() => {
-      dispatch(getOptions(search ? search : ""));
-    }, 1000);
-  }, [search]);
+   
+  const {cityName,search,isLoading,relatedData,handler,data} = useSearch()
 
   return (
     <>
@@ -71,12 +23,11 @@ const Search = () => {
             autoComplete="off"
           />
           {isLoading && (
-            <div className="absolute top-4 right-2 h-[32px] w-[32px]">
+            <div className="absolute  cursor-pointer top-4 right-2 h-[32px] w-[32px]">
               <img
                 src={loader}
                 alt="Loader Image"
                 className="animate-spin w-[26px] h-[26px]  text-red-400"
-                style={{}}
               />
             </div>
           )}
@@ -86,7 +37,7 @@ const Search = () => {
         <div className=" bg-gray-500 lg:max-w-[504px] rounded-lg mt-2 mx-auto object-cover overflow-hidden">
           <ul>
             {data?.map((item, i) => (
-              <>
+              <li>
                 <button
                   className="cursor-pointer  flex items-center w-[311px] lg:h-[56px] lg:w-[504px] py-[17px]  px-5"
                   key={i}
@@ -95,7 +46,7 @@ const Search = () => {
                   {item.name ? item.name : "No City Found"}
                 </button>
                 <hr className="border-black" />
-              </>
+              </li>
             ))}
           </ul>
         </div>
